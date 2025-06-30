@@ -1,6 +1,4 @@
 import { Routes, Route } from "react-router-dom"; 
-import React, { createContext, useState } from 'react';
-import type { ReactNode } from "react";
 import MainPage from '../src/pages/MainPage';
 import Navbar from '../src/components/Navbar';
 import ResumeAnalyser from '../src/pages/Resume-Analysis';
