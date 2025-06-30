@@ -77,7 +77,7 @@ const Navbar = () => {
         h-full
         ${isActive 
           ? "text-white bg-[rgba(255,255,255,0.15)]" 
-          : "text-gray-300 hover:text-white hover:bg-[255,255,255,0.1]"}
+          : "text-gray-300 hover:text-white hover:bg-[rgba(255,255,255,0.1)]"}
       `}
     >
       {item.onClick ? (
