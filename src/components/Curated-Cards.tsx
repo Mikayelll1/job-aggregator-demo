@@ -18,6 +18,7 @@ const CuratedCards = () => {
   const [error, setError] = useState<string | null>(null);
   const [selectedJob, setSelectedJob] = useState<Job | null>(null);
   const [showModal, setShowModal] = useState(false);
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     const fetchLocationAndJobs = async () => {
@@ -27,7 +28,7 @@ const CuratedCards = () => {
         const data = await res.json();
         const city = data.city || "Manchester";
 
-        const jobRes = await fetch(`http://localhost:8000/api/jobs?query=no experience jobs in ${encodeURIComponent(city)}`);
+        const jobRes = await fetch(`${apiUrl}/api/jobs?query=no experience jobs in ${encodeURIComponent(city)}`);
         if (!jobRes.ok) throw new Error("Failed to fetch jobs");
         const jobData = await jobRes.json();
 
