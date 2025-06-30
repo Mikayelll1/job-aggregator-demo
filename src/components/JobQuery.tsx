@@ -17,6 +17,7 @@ export default function JobSearch() {
   const [jobs, setJobs] = useState<JobListing[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   const [searchSubmitted, setSearchSubmitted] = useState(false);
 
@@ -51,7 +52,7 @@ export default function JobSearch() {
       if (country) params.country = country;
       if (employmentType) params.employment_type = employmentType;
 
-      const response = await axios.get("http://localhost:8000/api/search", {
+      const response = await axios.get(`${apiUrl}/api/search`, {
         params
       });
 
