@@ -108,7 +108,7 @@ function Profile() {
   };
 
   return (
-    <div className="rounded-xl min-h-[80vh] min-w-[90vw] bg-gray-100 pt-32 flex justify-center items-start">
+    <div className="min-h-[80vh] min-w-[90vw] bg-gray-100 pt-32 flex justify-center items-start">
       <div className="bg-white rounded-xl shadow-lg flex w-[2000px] min-h-[800px] overflow-hidden">
         {/* Sidebar */}
         <div className="bg-gray-200 w-1/3 p-6 flex flex-col items-center gap-6">
