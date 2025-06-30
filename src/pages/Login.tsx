@@ -82,7 +82,7 @@ function AuthPage() {
   };
 
   return (
-    <div className="rounded-xl shadow-2xl min-h-[80vh] min-w-[90vw] bg-gray-100 pt-32 flex justify-center items-start">
+    <div className="shadow-2xl min-h-[80vh] min-w-[90vw] bg-gray-100 pt-32 flex justify-center items-start">
       <form
         onSubmit={handleSubmit}
         className="bg-white p-8 rounded shadow-md max-w-sm w-full text-black"
