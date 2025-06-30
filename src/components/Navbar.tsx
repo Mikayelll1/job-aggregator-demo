@@ -70,7 +70,6 @@ const Navbar = () => {
       className={`
         relative
         cursor-pointer
-        rounded-full
         px-8 py-2
         font-semibold
         transition-colors duration-300 ease-in-out
