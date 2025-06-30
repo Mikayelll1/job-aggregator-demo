@@ -6,7 +6,7 @@ const ResumeAnalyser = () => {
   const [pdfFile, setPdfFile] = useState<File | null>(null);
 
   return (
-    <div className="rounded-xl shadow-2xl min-h-[92vh] min-w-[97vw] bg-gray-100 pt-10 px-8">
+    <div className="shadow-2xl min-h-[92vh] min-w-[97vw] bg-gray-100 pt-10 px-8">
       <div className="text-4xl font-bold text-center text-gray-600 mb-8">
         Let's see where you can improve
       </div>
