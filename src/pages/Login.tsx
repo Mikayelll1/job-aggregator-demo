@@ -9,6 +9,7 @@ function AuthPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   const { setUser, setToken } = useContext(UserContext);
   const navigate = useNavigate();
@@ -37,7 +38,7 @@ function AuthPage() {
         : { username, email, password };
 
     try {
-      const res = await fetch(`http://localhost:8000${endpoint}`, {
+      const res = await fetch(`${apiUrl}/${endpoint}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(bodyData),
@@ -56,7 +57,7 @@ function AuthPage() {
         setToken(accessToken);
 
         // Fetch profile to set user
-        const profileRes = await fetch("http://localhost:8000/profile", {
+        const profileRes = await fetch(`${apiUrl}/profile`, {
           headers: { Authorization: `Bearer ${accessToken}` },
         });
 
