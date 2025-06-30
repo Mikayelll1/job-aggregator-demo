@@ -49,7 +49,6 @@ const Navbar = () => {
         max-w-full
         bg-[rgba(30,30,30,0.85)]
         backdrop-blur-[8px]
-        rounded-[16px]
         flex justify-center
         shadow-[0_0_15px_rgba(0,0,0,0.2)]
         select-none
