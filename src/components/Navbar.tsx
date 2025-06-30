@@ -49,7 +49,6 @@ const Navbar = () => {
         max-w-full
         bg-[rgba(30,30,30,0.85)]
         backdrop-blur-[8px]
-        p-3
         rounded-[16px]
         flex justify-center
         shadow-[0_0_15px_rgba(0,0,0,0.2)]
@@ -57,10 +56,11 @@ const Navbar = () => {
         z-50
         whitespace-nowrap
         overflow-x-auto
+        h-16
         "
       style={{ marginTop: 0 }}
       >
-      <ul className="flex gap-[30px] m-0 p-0 flex-nowrap min-w-max list-none">
+      <ul className="flex m-0 p-0 flex-nowrap min-w-max list-none">
         {menuItems.map((item) => {
   const isActive = location.pathname === item.path;
 
@@ -71,17 +71,19 @@ const Navbar = () => {
         relative
         cursor-pointer
         rounded-full
-        px-4 py-2
+        px-8 py-2
         font-semibold
-        text-gray-300
-        transition-colors
-        duration-300
-        ease-in-out
-        ${isActive ? "text-white" : "hover:text-white"}
+        transition-colors duration-300 ease-in-out
+        border-r border-gray-600 last:border-none
+        flex items-center
+        h-full
+        ${isActive 
+          ? "text-white bg-[rgba(255,255,255,0.15)]" 
+          : "text-gray-300 hover:text-white hover:bg-[255,255,255,0.1]"}
       `}
     >
       {item.onClick ? (
-        <button onClick={item.onClick} className="bg-transparent border-none outline-none">
+        <button onClick={item.onClick} className="bg-transparent border-none outline-none cursor-pointer font-semibold">
           {item.label}
         </button>
       ) : (
@@ -93,8 +95,6 @@ const Navbar = () => {
           aria-hidden="true"
           className="
             absolute -top-1.5 -left-1.5 -right-1.5 -bottom-1.5
-            rounded-full
-            shadow-[0_0_12px_3px_#6fe793]
             pointer-events-none
             transition-shadow duration-300 ease-in-out
           "
