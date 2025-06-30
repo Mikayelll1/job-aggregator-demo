@@ -12,6 +12,7 @@ function Profile() {
   ]);
 
   const [activeSection, setActiveSection] = useState("Profile");
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -23,7 +24,7 @@ function Profile() {
       }
 
       try {
-        const res = await axios.get("http://localhost:8000/profile", {
+        const res = await axios.get(`${apiUrl}/profile`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
