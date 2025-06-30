@@ -31,6 +31,7 @@ export default function Chat({ pdfFile, setPdfFile }: ChatProps) {
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const chatEndRef = useRef<HTMLDivElement | null>(null);
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -44,7 +45,7 @@ export default function Chat({ pdfFile, setPdfFile }: ChatProps) {
     setLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:8000/chat', {
+      const response = await axios.post(`${apiUrl}/chat`, {
         user_input: input,
       });
       const reply = response.data.response;
@@ -68,7 +69,7 @@ export default function Chat({ pdfFile, setPdfFile }: ChatProps) {
     formData.append('file', pdfFile);
 
     try {
-      const response = await axios.post('http://localhost:8000/analyze-pdf', formData, {
+      const response = await axios.post(`${apiUrl}/analyze-pdf`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
 
