@@ -64,15 +64,15 @@ const CuratedCards = () => {
         )}
         {!loading && !error && jobs.map((job, idx) => (
           <div
-            className="curated-card hoverable"
+            className="curated-card hoverable flex flex-col"
             key={idx}
             onClick={() => openModal(job)}
             style={{ cursor: 'pointer' }}
           >
-            <strong>{job.title}</strong> <em>at {job.company}</em><br />
-            <small>{job.location} | {job.employment_type}</small><br />
-            <em>Salary: {job.salary}</em><br />
-            <span className="text-emerald-600 underline">View Details</span>
+            <strong>{job.title}</strong> <em>at {job.company}</em>
+            <small>{job.location} | {job.employment_type}</small>
+            <em>Salary: {job.salary}</em>
+            <span className="text-emerald-600 underline ml-auto">View Details</span>
           </div>
         ))}
       </div>
