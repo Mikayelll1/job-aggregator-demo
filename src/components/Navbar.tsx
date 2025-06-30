@@ -1,7 +1,6 @@
-import { useLocation, Link, useNavigate } from "react-router-dom";
-import { useContext, useEffect } from 'react'; 
+import { Link, useNavigate } from "react-router-dom";
+import { useContext } from 'react'; 
 import { UserContext } from "./User";
-import { label } from "framer-motion/client";
 
 const Navbar = () => {
   const navigate = useNavigate();
