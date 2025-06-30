@@ -5,7 +5,7 @@ function Profile() {
   const [user, setUser] = useState<{ username: string; email?: string } | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-  const [savedJobs] = useState([
+  const [savedJobs] = useState<{ id:number; title: string; company: string; }[]>([
     // Add example jobs or leave empty to test "No saved jobs"
     // { id: 1, title: "Frontend Developer", company: "Awesome Inc." },
     // { id: 2, title: "Backend Engineer", company: "Tech Corp" },
@@ -144,7 +144,7 @@ function Profile() {
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 p-8">{sections[activeSection]}</div>
+        <div className="flex-1 p-8">{sections[activeSection as keyof typeof sections]}</div>
       </div>
     </div>
   );
