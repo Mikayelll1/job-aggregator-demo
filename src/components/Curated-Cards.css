@@ -1,0 +1,107 @@
+.curated-cards-container {
+  position: fixed;
+  top: 50%;
+  left: 120px;
+  transform: translateY(-50%);
+  width: 40vw;
+  height: 65vh;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.curated-cards-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #4c546c;
+  margin-bottom: 16px;
+}
+
+.curated-cards-scroll {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Base card styling */
+.curated-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 20px;
+  text-align: left;
+  color: #222;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  min-height: 150px;   /* increased min height */
+  /* OR use fixed height if you want uniform size */
+  /* height: 180px; */
+}
+
+/* Blurred glow behind each card */
+.curated-card::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: -30%;
+  width: 160%;
+  height: 160%;
+  background: radial-gradient(
+    circle,
+    rgba(0, 255, 200, 0.25) 0%,
+    rgba(0, 0, 0, 0.15) 100%
+  );
+  filter: blur(50px); /* stronger, smoother glow */
+  z-index: 0;
+}
+
+.curated-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Message card shared styling */
+.curated-card.fetching,
+.curated-card.error,
+.curated-card.no-jobs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: italic;
+  font-weight: bold;
+  height: 150px;
+  user-select: none;
+  pointer-events: none;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  border-radius: 14px;
+  box-shadow: 0 0 10px rgba(0, 255, 200, 0.15);
+}
+
+/* Specific message colors */
+.curated-card.error {
+  background: rgba(255, 0, 0, 0.2);
+  color: #fff;
+}
+
+.curated-card.fetching {
+  background: rgba(0, 100, 255, 0.2);
+  color: #fff;
+}
+
+.curated-card.no-jobs {
+  background: rgba(255, 255, 255, 0.15);
+  color: #eee;
+}

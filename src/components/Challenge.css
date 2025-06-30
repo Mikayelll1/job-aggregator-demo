@@ -1,0 +1,91 @@
+.challenge-cards-container {
+  position: fixed;
+  top: 50%;
+  right: 120px; /* fixed horizontal offset */
+  transform: translateY(-50%); /* only vertically center */
+  width: 40vw;
+  height: 65vh;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.challenge-cards-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #4c546c;
+  margin-bottom: 16px;
+}
+
+.challenge-cards-scroll {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.challenge-card {
+  background: #f7f7f7;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  text-align: left;
+  color: #222;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+/* Special message cards styling */
+
+.chalenge-card.fetching,
+.chaellenge-card.error,
+.challenge-card.no-jobs {
+  cursor: default;        /* No pointer cursor for messages */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: italic;
+  height: 150px;          /* Approximate card height */
+  color: #555;
+  box-shadow: none;       /* Slightly subtler for messages */
+  background: #f0f0f0;
+  user-select: none;      /* Disable text selection */
+}
+
+.challenge-card.not-ready {
+  position: relative;
+  padding: 2rem;
+  color: #fff;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.2);
+  text-align: center;
+  box-shadow: 0 0 30px rgba(0, 255, 200, 0.25);
+  overflow: hidden;
+  font-size: 1.2rem;
+  font-weight: bold;
+  min-height: 180px; /* Slightly larger to fit content */
+}
+
+.challenge-card.not-ready .blur-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(0, 255, 200, 0.3), transparent 70%);
+  filter: blur(30px);
+  z-index: 0;
+  transform: translate(-10%, -10%); /* Expand beyond edges */
+}
+
+.challenge-card.not-ready .not-ready-message {
+  position: relative;
+  z-index: 1;
+}
