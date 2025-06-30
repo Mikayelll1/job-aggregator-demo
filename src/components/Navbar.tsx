@@ -46,7 +46,7 @@ const Navbar = () => {
         relative top-0 left-0 right-0 
         mx-auto
         w-full
-        max-w-[100]
+        max-w-full
         bg-[rgba(30,30,30,0.85)]
         backdrop-blur-[8px]
         p-3
