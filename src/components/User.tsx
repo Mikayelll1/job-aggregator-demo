@@ -18,12 +18,13 @@ export const UserContext = createContext<UserContextType>({
 export const UserProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<{ username: string } | null>(null);
   const [token, setToken] = useState<string | null>(null);
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     const savedToken = localStorage.getItem('access_token');
     if (savedToken) {
       // Validate token by fetching user profile
-      fetch('http://localhost:8000/profile', {
+      fetch(`${apiUrl}/profile`, {
         headers: { Authorization: `Bearer ${savedToken}` },
       })
         .then(res => {
