@@ -8,6 +8,7 @@ import Jobs from '../src/pages/Jobs';
 import { UserProvider } from "../src/components/User";
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
+import { Analytics } from "@vercel/analytics/next"
 
 const App = () => {
   return(
@@ -23,6 +24,7 @@ const App = () => {
         {/* Add more routes as needed */}
         </Routes>
     </UserProvider>
+    <Analytics />
     </>
     );
   };
