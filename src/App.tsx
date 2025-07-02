@@ -8,7 +8,7 @@ import Jobs from '../src/pages/Jobs';
 import { UserProvider } from "../src/components/User";
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react"
 
 const App = () => {
   return(
